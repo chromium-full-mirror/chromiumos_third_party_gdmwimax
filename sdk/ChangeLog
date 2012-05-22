@@ -1,0 +1,154 @@
+v.1.6.8
+	rtd is removed from neighbor information.
+
+v.1.6.7
+	Add eap parameters.
+		T_EAP_DECORATION
+		T_EAP_RAND_SEED
+		T_EAP_SESSIONTICKET_OFF
+
+v.1.6.6
+	Fix a bug that sdk status remains being connected even until 
+	auto-connection starts.
+
+v.1.6.5
+	Fix a bug that hci timeout occurs when cr801/TLS is issued.
+
+v.1.6.4
+	Fix a bug that stack overflow occurs when mbstowcs is invoked.
+
+v.1.6.3
+	Support auto-connection for partner network.
+	Add APIs as follow
+		GAPI_CmdMACState
+		GAPI_SetIdleModeTimeout
+		GAPI_GetPHY_MAC_Basic
+		GAPI_GetPHY_MCS
+		GAPI_GetPHY_CINR_RSSI	
+
+v.1.6.2
+	Change the way deciding OMA-DM provisioning session.
+
+v.1.6.1
+	Fix a bug that if CR801 is enable and Activated node is TRUE, then WIB does 
+	not work.
+
+v.1.6
+	Support DRMD.
+
+v.1.5
+	DMC initiates a session ever polling-interval even if Activated node is false.
+	Add IP-renew indication.
+	Fix a bug that if Suspend/Hibernate is issued seg-fault occurs.
+
+v.1.4
+	Support OMA-DM for Clearwire.
+	Fix a bug start_timer is invoked while a timer callback is executed.
+	Fix a bug that WiMAX state machine is not working correctly.
+	Replace getline with fgets for portability.
+
+v.1.3.2
+	Support KT (Korea Telecom) specific 8.75/10MHz bandwidth switching function. 
+	Support PollingAttempts for OMA-DM client-initiated session.
+	Add GAPI_PrintLog API.
+	Support multiple defining of EAP-TLS and EAP-AKA.
+	Fix a bug that GAPI_GetStatistics returns invalid statistics.
+	If SIB is not notified, WIB starts in 10 seconds after IP was acquired.
+	Move the code that reads eap-log file in E-EAP into SDK.
+	Change the mechanism printing to the log file.
+	Change the way setting default log level.
+	Fix a bug that GAPI_GetConnectedNSP returns invalid RSSI & CINR value.
+	Fix a bug that if recvmsg(netlink) returns ENOBUFS, io_receiver_thread is terminated.
+
+v.1.3.1
+	Add a function updating XML after finishing an OMA-DM session.
+	Add a defense code that client initiates an OMA-DM session if digest-mismatch occurs.
+	Fix a bug that if each certificate does not include enter-char('\n') at the end of file, chaind-CA is not loaded.
+	Change the way setting operator node(<x>) to be set up dynamically.
+	Add an API that subscribes OMA-DM Package URL for FUMO.
+		GAPI_SubscribeODMFwPkgURL
+
+v.1.3
+	Fix a bug that HCI response is missed.
+		-Use hci_send_wait instead of hci_send & hci_wait.
+	Fix a bug that if device certificate is not set up, eap initialization is failed.
+	Change the way setting default log level.
+
+v.1.2.1
+	Change some error messages related to connection failure to normal message.
+	Remove some warning errors.
+
+v.1.2
+	OMA-DM client has been tested.
+	Support CR801.
+
+v.1.1.8
+	Support Wide-Scan.
+
+v.1.1.7
+	Change the way getting SDK Log.
+	Add OMA-DM client but not tested.
+
+v.1.1.6
+	Support using NULL certificate for embedded EAP.
+	Support getting neighbor list.
+	Support indicating power-mode.
+
+v.1.1.5
+	Fix a bug that checking whether a file was encrypted doesn't work.
+	Change log message time format.
+
+v.1.1.4
+	Update Eaplib v1.1.36
+	
+v.1.1.3
+	Support setting NULL certificate.
+
+v.1.1.2
+	Support setting/getting connection-complte information.
+	Fix a bug that device certificate is not set to eaplib.
+
+v.1.1.1
+	Chagne log file path.
+	Fix a bug that GAPI_GetRFInform returns failure because of permission denial in read only mode.
+	Fix a bug that malloc is NULL when network list count is 0.
+
+v.1.1
+	Support EAP-AKA.
+
+v.1.0.8
+	Support APIs getting bootloader/FW version.
+		-Add GAPI_GetBootloaderVersion
+		-Update GAPI_GetDeviceInformation
+	Support indication for scanning.
+	Support an API getting RF statistic.
+		-Add GAPI_GetRFInform
+
+v.1.0.7
+	Fix how to calculate the index of wimax device.
+
+v.1.0.6
+	Fix a bug that SDK is not working on Big-Endian machine.
+	Change certification handling from file to memory.
+	Support applying combined certification from NVRAM.
+
+v.1.0.5
+	Support disconnect-reason notification.
+
+v.1.0.4
+	Fix a bug that to open stdin is failed with error code(Bad file descriptor).
+
+v.1.0.3
+	Support eap error notification.
+
+v.1.0.2
+	Support multiple certificate files.
+
+v.1.0.1
+	Change the mechnism to wait HCI.
+
+v.1.0
+	Change HCI interface from netdevive socket to netlink socket.
+
+v.0.1
+	First update

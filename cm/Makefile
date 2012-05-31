@@ -1,8 +1,7 @@
 # Configuration
 -include ../.config
 
-CC = gcc
-OBJDUMP = objdump
+CC ?= gcc
 
 SDK_LIB = ../sdk/libgdmwimax.a
 SDK_LNK = -lpthread -lm -lrt -lz
@@ -13,29 +12,27 @@ obj-cm = main.o cm.o cmd.o ind.o profilestring.o exitcb.o sem.o \
 
 .EXPORT_ALL_VARIABLES:
 
-CFLAGS += ${GFLAGS}
+CFLAGS ?= -g -O2
 CFLAGS += -Wall
-CFLAGS += -g -O0
 
 ifeq ("$(CONFIG_DM_INTERFACE)", "y")
-CFLAGS += -DCONFIG_DM_INTERFACE
-CFLAGS += -DCONFIG_DM_NET_DEVICE="\""$(CONFIG_DM_NET_DEVICE)""\"
+CPPFLAGS += -DCONFIG_DM_INTERFACE
+CPPFLAGS += -DCONFIG_DM_NET_DEVICE='"$(CONFIG_DM_NET_DEVICE)"'
 obj-cm += dm_if.o
 endif
 
 ifdef CONFIG_LOG_FILE_BUF_SIZE
-CFLAGS += -DCONFIG_LOG_FILE_BUF_SIZE=$(CONFIG_LOG_FILE_BUF_SIZE)
+CPPFLAGS += -DCONFIG_LOG_FILE_BUF_SIZE=$(CONFIG_LOG_FILE_BUF_SIZE)
 endif
 
 ifeq ("$(CONFIG_ENABLE_SERVICE_FLOW)", "y")
-CFLAGS += -DCONFIG_ENABLE_SERVICE_FLOW
+CPPFLAGS += -DCONFIG_ENABLE_SERVICE_FLOW
 endif
 
 all: $(CM)
 
 $(CM): $(obj-cm) $(SDK_LIB)
 	$(CC) -o $@ $(obj-cm) $(LIBS)
-	$(OBJDUMP) -d $@ > disa
 
 clean:
-	-rm -f $(CM) *.a *.so *.elf *.gdb *.o disa
+	-rm -f $(CM) *.a *.so *.elf *.gdb *.o

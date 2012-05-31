@@ -18,7 +18,6 @@
 #include <errno.h>
 #include <assert.h>
 #include <math.h>
-#include <zlib.h>
 
 #include "cm.h"
 #include "profilestring.h"

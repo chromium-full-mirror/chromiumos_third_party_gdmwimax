@@ -13,7 +13,6 @@
 #include <fcntl.h>
 #include <assert.h>
 #include <errno.h>
-#include <zlib.h>
 #include <net/if.h>
 #include <sys/ioctl.h>
 #include <arpa/inet.h>

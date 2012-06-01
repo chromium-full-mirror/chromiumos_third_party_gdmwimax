@@ -4,7 +4,7 @@
 CC ?= gcc
 
 SDK_LIB = ../sdk/libgdmwimax.a
-SDK_LNK = -lpthread -lm -lrt -lz
+SDK_LNK = -lpthread -lm -lrt
 CM = cm
 LIBS = $(SDK_LNK) $(SDK_LIB)
 obj-cm = main.o cm.o cmd.o ind.o profilestring.o exitcb.o sem.o \

@@ -12,7 +12,7 @@ obj-cm = main.o cm.o cmd.o ind.o profilestring.o exitcb.o sem.o \
 
 .EXPORT_ALL_VARIABLES:
 
-CFLAGS = -g -O0
+CFLAGS ?= -g -O2
 CFLAGS += -Wall
 
 ifeq ("$(CONFIG_DM_INTERFACE)", "y")

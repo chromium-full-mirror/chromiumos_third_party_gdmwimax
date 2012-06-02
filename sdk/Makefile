@@ -12,7 +12,7 @@ obj-sdk = device.o io.o hci.o wimax.o nds.o log.o \
 
 .EXPORT_ALL_VARIABLES:
 
-CFLAGS = -g -O0
+CFLAGS ?= -g -O2
 CFLAGS += -Wall -fPIC
 
 ifeq ("$(CONFIG_TRANSPORT_TEST)", "y")

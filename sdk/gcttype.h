@@ -9,7 +9,9 @@
 
 #if !defined(SDK_TYPEDEF)
 #define SDK_TYPEDEF
-typedef char 				bool;
+#if !defined(__cplusplus)
+typedef char                           bool;
+#endif
 typedef unsigned char		u8;
 typedef unsigned short		u16;
 typedef unsigned int		u32;

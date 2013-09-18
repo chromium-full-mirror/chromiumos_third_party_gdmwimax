@@ -32,7 +32,7 @@ endif
 all: $(CM)
 
 $(CM): $(obj-cm) $(SDK_LIB)
-	$(CC) -o $@ $(obj-cm) $(LIBS)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(obj-cm) $(LIBS)
 
 clean:
 	-rm -f $(CM) *.a *.so *.elf *.gdb *.o

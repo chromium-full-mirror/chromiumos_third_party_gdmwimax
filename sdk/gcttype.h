@@ -760,7 +760,7 @@ typedef enum _FUMO_RESULT {
 								The download fails due insufficient memory in the device
 								to save the firmware update package.*/
 	FUMO_UPDATE_OUT_OF_MEM = 502, /*Firmware update fails due to device out of memory
-				The update fails because there isn¡¯t sufficient memory to update the device.*/
+				The update fails because there isn't sufficient memory to update the device.*/
 	FUMO_DL_NETWORK_ERR = 503, /*Download fails due to network issues
 								The download fails due to network/transport level errors*/
 	FUMO_ALT_DL_SERV_ERR_VENDOR_SPEC = 550, /*550-599: Alternate Download Server Error.
